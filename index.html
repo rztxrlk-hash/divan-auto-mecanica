@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Divan Auto Mecânica</title>
+
+<title>Divan Auto Mecânica | Mecânico em Engenheiro Coelho</title>
+
+<meta name="description" content="Mecânica em Engenheiro Coelho. Atendimento rápido, honesto e profissional. Chame no WhatsApp agora.">
+<meta name="keywords" content="mecânico Engenheiro Coelho, oficina automotiva, troca de óleo, freios">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,7 +16,7 @@ body {
     background:#0a0a0a;
     color:white;
     font-family:Arial;
-    scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
 /* LOADING */
@@ -23,6 +27,7 @@ body {
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-direction:column;
     z-index:9999;
 }
 
@@ -30,11 +35,22 @@ body {
     width:0%;
     height:4px;
     background:#22c55e;
-    animation:load 2s forwards;
+    animation:load 2s ease forwards;
 }
 
 @keyframes load {
     to { width:100%; }
+}
+
+/* ENTRADA DO SITE */
+#site {
+    opacity:0;
+    transform:scale(0.98);
+    transition:1s ease;
+}
+#site.show {
+    opacity:1;
+    transform:scale(1);
 }
 
 /* HERO */
@@ -47,18 +63,17 @@ body {
     text-align:center;
     position:relative;
 }
-
 .hero::after {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.7);
+    background:rgba(0,0,0,0.75);
 }
 
 /* BOTÃO */
 .btn {
     background:#22c55e;
-    padding:16px 30px;
+    padding:16px 28px;
     border-radius:12px;
     font-weight:bold;
     transition:0.3s;
@@ -67,24 +82,15 @@ body {
     transform:scale(1.1);
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO SCROLL */
 .fade {
     opacity:0;
     transform:translateY(40px);
     transition:0.8s ease;
 }
-
 .fade.show {
     opacity:1;
     transform:translateY(0);
-}
-
-/* CARD */
-.card {
-    background:#18181b;
-    padding:20px;
-    border-radius:14px;
-    border:1px solid #27272a;
 }
 
 /* FLOAT */
@@ -103,8 +109,12 @@ body {
 
 <!-- LOADING -->
 <div id="loader">
+    <h1 class="mb-4 text-xl">Carregando...</h1>
     <div class="loader-bar"></div>
 </div>
+
+<!-- SITE -->
+<div id="site">
 
 <!-- HERO -->
 <section class="hero">
@@ -112,69 +122,35 @@ body {
     <img src="https://i.postimg.cc/cHV18GzT/unnamed-3.jpg" class="w-28 mx-auto mb-6">
 
     <h1 class="text-5xl font-black">
-        SEU CARRO <br><span class="text-red-600">EM BOAS MÃOS</span>
+        MECÂNICO EM <br><span class="text-red-600">ENGENHEIRO COELHO</span>
     </h1>
 
     <p class="mt-4 mb-6 text-gray-300">
-        Mecânica profissional em Engenheiro Coelho
+        Atendimento rápido, honesto e sem enrolação.
     </p>
 
-    <a href="https://wa.me/5519987716784" class="btn">
+    <a href="https://wa.me/5519987716784?text=Olá,%20preciso%20de%20um%20orçamento"
+    class="btn">
         CHAMAR NO WHATSAPP
     </a>
 </div>
 </section>
 
-<!-- CONTADOR -->
+<!-- PROVA SOCIAL -->
 <section class="p-12 text-center fade">
-<h2 class="text-4xl mb-6">Mais de</h2>
-<div id="counter" class="text-6xl font-black text-green-500">0</div>
-<p class="mt-2">clientes atendidos</p>
+<h2 class="text-4xl mb-6">★★★★★ 5.0 no Google</h2>
+<p>"Atendimento rápido e preço justo"</p>
 </section>
 
 <!-- SERVIÇOS -->
-<section class="p-12 text-center">
-<h2 class="text-4xl mb-10 fade">Serviços</h2>
+<section class="p-12 text-center fade">
+<h2 class="text-4xl mb-10">Serviços</h2>
 
 <div class="grid md:grid-cols-4 gap-6">
-<div class="card fade" style="transition-delay:0.1s">Troca de óleo</div>
-<div class="card fade" style="transition-delay:0.2s">Freios</div>
-<div class="card fade" style="transition-delay:0.3s">Suspensão</div>
-<div class="card fade" style="transition-delay:0.4s">Motor</div>
-</div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="p-12 text-center fade">
-<h2 class="text-4xl mb-10">Avaliações</h2>
-
-<div class="grid md:grid-cols-3 gap-6">
-
-<div class="card">
-★★★★★<br>
-"Atendimento rápido e honesto!"
-</div>
-
-<div class="card">
-★★★★★<br>
-"Melhor mecânica da região."
-</div>
-
-<div class="card">
-★★★★★<br>
-"Preço justo e serviço top!"
-</div>
-
-</div>
-</section>
-
-<!-- GALERIA -->
-<section class="p-12 text-center fade">
-<h2 class="text-4xl mb-10">Nossa Oficina</h2>
-
-<div class="grid md:grid-cols-2 gap-6">
-<img src="https://i.postimg.cc/XJD46630/unnamed.jpg" class="rounded">
-<img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg" class="rounded">
+<div class="bg-zinc-800 p-6 rounded">Troca de óleo</div>
+<div class="bg-zinc-800 p-6 rounded">Freios</div>
+<div class="bg-zinc-800 p-6 rounded">Suspensão</div>
+<div class="bg-zinc-800 p-6 rounded">Motor</div>
 </div>
 </section>
 
@@ -194,46 +170,39 @@ width="100%" height="100%" style="border:0;"></iframe>
 </div>
 </section>
 
-<!-- FLOAT -->
-<a href="https://wa.me/5519987716784" class="float">💬</a>
+</div>
+
+<!-- BOTÃO -->
+<a href="https://wa.me/5519987716784?text=Olá,%20preciso%20de%20um%20orçamento"
+class="float">💬</a>
 
 <script>
 
-// LOADING
+// LOADING + ENTRADA
 window.onload = () => {
     setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
+        document.getElementById('loader').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('site').classList.add('show');
+        }, 500);
     }, 2000);
 };
 
-// SCROLL ANIMATION
-const elements = document.querySelectorAll('.fade');
+// SCROLL
+const els = document.querySelectorAll('.fade');
 
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add('show');
+const obs = new IntersectionObserver(entries => {
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add('show');
 }
 });
 });
 
-elements.forEach(el => observer.observe(el));
-
-// CONTADOR
-let count = 0;
-const target = 350;
-const counter = document.getElementById('counter');
-
-const interval = setInterval(() => {
-count += 5;
-counter.innerText = count + "+";
-
-if(count >= target){
-clearInterval(interval);
-}
-}, 30);
+els.forEach(el => obs.observe(el));
 
 </script>
 
 </body>
-    </html>
+</html>
