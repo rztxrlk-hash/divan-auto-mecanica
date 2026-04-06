@@ -9,8 +9,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 
-<script src="https://unpkg.com/lucide@latest"></script>
-
 <style>
 body {
     font-family: 'Inter', sans-serif;
@@ -18,154 +16,148 @@ body {
     color: white;
 }
 
-/* ANIMAÇÕES */
-.fade-up {
+/* animação */
+.reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s ease;
 }
-.fade-up.active {
+.reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* PARALLAX */
-.parallax {
-    transform: translateY(0);
-    transition: transform 0.2s linear;
+/* botão destaque */
+.cta {
+    box-shadow: 0 0 20px rgba(34,197,94,0.5);
+}
+.cta:hover {
+    box-shadow: 0 0 40px rgba(34,197,94,1);
 }
 
-/* BOTÃO PREMIUM */
-.btn-glow {
-    box-shadow: 0 0 20px rgba(220,38,38,0.4);
-}
-.btn-glow:hover {
-    box-shadow: 0 0 40px rgba(220,38,38,0.8);
-}
-
-/* CARD */
-.card {
-    transition: all 0.3s ease;
-}
+/* cards */
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-8px);
     border-color: #dc2626;
+    transition: 0.3s;
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav id="nav" class="fixed w-full z-50 p-5 transition-all">
-<div class="flex justify-between items-center max-w-7xl mx-auto">
-<div class="flex items-center gap-3">
-<img src="https://i.postimg.cc/cHV18GzT/unnamed-3.jpg" class="w-10">
-<span class="font-bold text-xl">DIVAN <span class="text-red-600">AUTO</span></span>
-</div>
-
-<a href="https://wa.me/5519987716784" class="bg-red-600 px-5 py-2 rounded-xl font-bold btn-glow">
-WhatsApp
-</a>
-</div>
-</nav>
-
 <!-- HERO -->
-<section class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+<section class="h-screen flex items-center justify-center text-center relative">
 
 <img src="https://i.postimg.cc/bJKY2f5g/unnamed-1.jpg"
-class="absolute w-full h-full object-cover opacity-30 parallax">
+class="absolute w-full h-full object-cover opacity-30">
 
-<div class="absolute w-full h-full bg-black/80"></div>
+<div class="absolute inset-0 bg-black/80"></div>
 
-<div class="relative z-10 fade-up">
+<div class="relative z-10 max-w-2xl px-6 reveal">
+
 <h1 class="text-5xl md:text-7xl font-black mb-6">
-DIVAN <span class="text-red-600">AUTO MECÂNICA</span>
+SEU CARRO <span class="text-red-600">EM BOAS MÃOS</span>
 </h1>
 
-<p class="text-zinc-400 max-w-xl mx-auto mb-8">
-Mecânica profissional em Engenheiro Coelho. Diagnóstico preciso e serviço de verdade.
+<p class="text-zinc-400 mb-6">
+Mecânica profissional em Engenheiro Coelho. Serviço rápido, honesto e sem enrolação.
+</p>
+
+<p class="text-yellow-400 font-bold mb-8">
+★★★★★ 5.0 no Google
 </p>
 
 <a href="https://wa.me/5519987716784"
-class="bg-red-600 px-10 py-5 rounded-2xl font-bold btn-glow text-lg">
-FALAR NO WHATSAPP
+class="cta bg-green-500 px-10 py-5 rounded-2xl text-lg font-bold">
+CHAMAR NO WHATSAPP AGORA
 </a>
+
 </div>
+
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="py-20 text-center reveal">
+
+<h2 class="text-3xl font-bold mb-10">O que nossos clientes dizem</h2>
+
+<div class="max-w-3xl mx-auto text-zinc-400">
+<p class="mb-4">"Atendimento rápido e preço justo. Recomendo demais."</p>
+<p>"Mecânico honesto, explicou tudo direitinho."</p>
+</div>
+
 </section>
 
 <!-- SERVIÇOS -->
-<section class="py-20 max-w-7xl mx-auto px-6">
+<section class="py-20 max-w-6xl mx-auto px-6">
 
-<h2 class="text-4xl font-black text-center mb-16 fade-up">
-Nossos Serviços
-</h2>
+<h2 class="text-4xl font-bold text-center mb-14 reveal">Serviços</h2>
 
 <div class="grid md:grid-cols-4 gap-6">
 
-<div class="card bg-zinc-900 p-8 rounded-2xl border border-zinc-800 fade-up">
-<i data-lucide="droplets" class="text-red-600 mb-4"></i>
-<h3 class="font-bold text-xl">Troca de Óleo</h3>
+<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+Troca de óleo
 </div>
 
-<div class="card bg-zinc-900 p-8 rounded-2xl border border-zinc-800 fade-up">
-<i data-lucide="settings" class="text-red-600 mb-4"></i>
-<h3 class="font-bold text-xl">Freios</h3>
+<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+Freios
 </div>
 
-<div class="card bg-zinc-900 p-8 rounded-2xl border border-zinc-800 fade-up">
-<i data-lucide="car" class="text-red-600 mb-4"></i>
-<h3 class="font-bold text-xl">Suspensão</h3>
+<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+Suspensão
 </div>
 
-<div class="card bg-zinc-900 p-8 rounded-2xl border border-zinc-800 fade-up">
-<i data-lucide="wrench" class="text-red-600 mb-4"></i>
-<h3 class="font-bold text-xl">Motor</h3>
+<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+Motor
 </div>
 
 </div>
+
 </section>
 
 <!-- GALERIA -->
 <section class="py-20 bg-zinc-900">
 
-<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-center text-4xl font-bold mb-10 reveal">Nossa Oficina</h2>
 
-<h2 class="text-4xl font-black text-center mb-16 fade-up">
-Nossa Oficina
+<div class="grid md:grid-cols-2 gap-6 px-6 max-w-6xl mx-auto">
+
+<img src="https://i.postimg.cc/XJD46630/unnamed.jpg" class="rounded-xl reveal">
+<img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg" class="rounded-xl reveal">
+
+</div>
+
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-20 text-center reveal">
+
+<h2 class="text-3xl font-bold mb-6">
+Precisa de mecânico agora?
 </h2>
 
-<div class="grid md:grid-cols-2 gap-6">
+<p class="text-zinc-400 mb-8">
+Fale direto no WhatsApp e resolva rápido.
+</p>
 
-<img src="https://i.postimg.cc/XJD46630/unnamed.jpg"
-class="rounded-2xl fade-up">
+<a href="https://wa.me/5519987716784"
+class="cta bg-green-500 px-10 py-5 rounded-2xl font-bold text-lg">
+FALAR AGORA
+</a>
 
-<img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg"
-class="rounded-2xl fade-up">
-
-</div>
-
-</div>
 </section>
 
 <!-- CONTATO -->
-<section class="py-20 max-w-7xl mx-auto px-6">
+<section class="py-20 text-center">
 
-<h2 class="text-4xl font-black mb-10 fade-up">
-Contato
-</h2>
+<p>Rua Benedito da Cunha Guedes, 785</p>
+<p>Engenheiro Coelho - SP</p>
 
-<p class="text-zinc-400 mb-4 fade-up">
-Rua Benedito da Cunha Guedes, 785 - Engenheiro Coelho
-</p>
-
-<a href="tel:19987716784" class="text-2xl font-bold fade-up">
-(19) 98771-6784
-</a>
-
-<div class="mt-10 h-80 fade-up">
+<div class="mt-10 h-80 px-6">
 <iframe
-src="https://maps.google.com/maps?q=Rua%20Benedito%20da%20Cunha%20Guedes%20785%20Engenheiro%20Coelho&t=&z=15&ie=UTF8&iwloc=&output=embed"
+src="https://maps.google.com/maps?q=Rua%20Benedito%20da%20Cunha%20Guedes%20785&t=&z=15&output=embed"
 width="100%" height="100%" style="border:0;">
 </iframe>
 </div>
@@ -174,40 +166,22 @@ width="100%" height="100%" style="border:0;">
 
 <!-- WHATS FLOAT -->
 <a href="https://wa.me/5519987716784"
-class="fixed bottom-6 right-6 bg-green-600 p-4 rounded-full shadow-xl">
+class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full text-white text-xl shadow-lg">
 💬
 </a>
 
 <script>
-lucide.createIcons();
+const elements = document.querySelectorAll('.reveal');
 
-// ANIMAÇÃO SCROLL
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add('active');
+window.addEventListener('scroll', () => {
+elements.forEach(el => {
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add('active');
 }
 });
-});
-
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-// NAVBAR
-window.addEventListener('scroll', () => {
-const nav = document.getElementById('nav');
-if(window.scrollY > 50){
-nav.style.background = "#050505";
-} else {
-nav.style.background = "transparent";
-}
-});
-
-// PARALLAX
-window.addEventListener('scroll', () => {
-document.querySelector('.parallax').style.transform =
-`translateY(${window.scrollY * 0.3}px)`;
 });
 </script>
 
 </body>
-    </html>
+</html>
