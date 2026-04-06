@@ -16,30 +16,24 @@ body {
     color: white;
 }
 
-/* animação */
+/* animação suave */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
 }
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* botão destaque */
-.cta {
-    box-shadow: 0 0 20px rgba(34,197,94,0.5);
-}
-.cta:hover {
-    box-shadow: 0 0 40px rgba(34,197,94,1);
-}
-
 /* cards */
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #dc2626;
+.card {
     transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #dc2626;
 }
 </style>
 
@@ -48,29 +42,29 @@ body {
 <body>
 
 <!-- HERO -->
-<section class="h-screen flex items-center justify-center text-center relative">
+<section class="h-screen flex items-center justify-center text-center relative px-4">
 
 <img src="https://i.postimg.cc/bJKY2f5g/unnamed-1.jpg"
 class="absolute w-full h-full object-cover opacity-30">
 
 <div class="absolute inset-0 bg-black/80"></div>
 
-<div class="relative z-10 max-w-2xl px-6 reveal">
+<div class="relative z-10 max-w-xl w-full reveal">
 
-<h1 class="text-5xl md:text-7xl font-black mb-6">
+<h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
 SEU CARRO <span class="text-red-600">EM BOAS MÃOS</span>
 </h1>
 
-<p class="text-zinc-400 mb-6">
+<p class="text-zinc-400 mb-6 text-sm md:text-base">
 Mecânica profissional em Engenheiro Coelho. Serviço rápido, honesto e sem enrolação.
 </p>
 
-<p class="text-yellow-400 font-bold mb-8">
+<p class="text-yellow-400 font-bold mb-8 text-sm md:text-base">
 ★★★★★ 5.0 no Google
 </p>
 
 <a href="https://wa.me/5519987716784"
-class="cta bg-green-500 px-10 py-5 rounded-2xl text-lg font-bold">
+class="block w-full bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-bold text-base md:text-lg transition">
 CHAMAR NO WHATSAPP AGORA
 </a>
 
@@ -79,11 +73,13 @@ CHAMAR NO WHATSAPP AGORA
 </section>
 
 <!-- PROVA SOCIAL -->
-<section class="py-20 text-center reveal">
+<section class="py-16 text-center px-4">
 
-<h2 class="text-3xl font-bold mb-10">O que nossos clientes dizem</h2>
+<h2 class="text-2xl md:text-3xl font-bold mb-8 reveal">
+O que nossos clientes dizem
+</h2>
 
-<div class="max-w-3xl mx-auto text-zinc-400">
+<div class="max-w-xl mx-auto text-zinc-400 text-sm md:text-base reveal">
 <p class="mb-4">"Atendimento rápido e preço justo. Recomendo demais."</p>
 <p>"Mecânico honesto, explicou tudo direitinho."</p>
 </div>
@@ -91,25 +87,27 @@ CHAMAR NO WHATSAPP AGORA
 </section>
 
 <!-- SERVIÇOS -->
-<section class="py-20 max-w-6xl mx-auto px-6">
+<section class="py-16 px-4 max-w-6xl mx-auto">
 
-<h2 class="text-4xl font-bold text-center mb-14 reveal">Serviços</h2>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-10 reveal">
+Serviços
+</h2>
 
-<div class="grid md:grid-cols-4 gap-6">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+<div class="card bg-zinc-900 p-4 rounded-xl border border-zinc-800 text-center reveal">
 Troca de óleo
 </div>
 
-<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+<div class="card bg-zinc-900 p-4 rounded-xl border border-zinc-800 text-center reveal">
 Freios
 </div>
 
-<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+<div class="card bg-zinc-900 p-4 rounded-xl border border-zinc-800 text-center reveal">
 Suspensão
 </div>
 
-<div class="card bg-zinc-900 p-6 rounded-xl border border-zinc-800 reveal">
+<div class="card bg-zinc-900 p-4 rounded-xl border border-zinc-800 text-center reveal">
 Motor
 </div>
 
@@ -118,55 +116,59 @@ Motor
 </section>
 
 <!-- GALERIA -->
-<section class="py-20 bg-zinc-900">
+<section class="py-16 bg-zinc-900 px-4">
 
-<h2 class="text-center text-4xl font-bold mb-10 reveal">Nossa Oficina</h2>
+<h2 class="text-center text-3xl md:text-4xl font-bold mb-10 reveal">
+Nossa Oficina
+</h2>
 
-<div class="grid md:grid-cols-2 gap-6 px-6 max-w-6xl mx-auto">
+<div class="grid md:grid-cols-2 gap-4 max-w-6xl mx-auto">
 
-<img src="https://i.postimg.cc/XJD46630/unnamed.jpg" class="rounded-xl reveal">
-<img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg" class="rounded-xl reveal">
+<img src="https://i.postimg.cc/XJD46630/unnamed.jpg" class="rounded-xl reveal w-full">
+<img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg" class="rounded-xl reveal w-full">
 
 </div>
 
 </section>
 
 <!-- CTA FINAL -->
-<section class="py-20 text-center reveal">
+<section class="py-16 text-center px-4">
 
-<h2 class="text-3xl font-bold mb-6">
+<h2 class="text-2xl md:text-3xl font-bold mb-6 reveal">
 Precisa de mecânico agora?
 </h2>
 
-<p class="text-zinc-400 mb-8">
+<p class="text-zinc-400 mb-8 text-sm md:text-base reveal">
 Fale direto no WhatsApp e resolva rápido.
 </p>
 
 <a href="https://wa.me/5519987716784"
-class="cta bg-green-500 px-10 py-5 rounded-2xl font-bold text-lg">
+class="block max-w-md mx-auto bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-bold text-base md:text-lg transition">
 FALAR AGORA
 </a>
 
 </section>
 
 <!-- CONTATO -->
-<section class="py-20 text-center">
+<section class="py-16 text-center px-4">
 
-<p>Rua Benedito da Cunha Guedes, 785</p>
-<p>Engenheiro Coelho - SP</p>
+<p class="text-sm md:text-base">Rua Benedito da Cunha Guedes, 785</p>
+<p class="text-sm md:text-base">Engenheiro Coelho - SP</p>
 
-<div class="mt-10 h-80 px-6">
+<div class="mt-8 h-72 md:h-96 max-w-4xl mx-auto">
+
 <iframe
-src="https://maps.google.com/maps?q=Rua%20Benedito%20da%20Cunha%20Guedes%20785&t=&z=15&output=embed"
+src="https://maps.google.com/maps?q=Rua%20Benedito%20da%20Cunha%20Guedes%20785%20Engenheiro%20Coelho&t=&z=15&output=embed"
 width="100%" height="100%" style="border:0;">
 </iframe>
+
 </div>
 
 </section>
 
-<!-- WHATS FLOAT -->
+<!-- BOTÃO FLUTUANTE -->
 <a href="https://wa.me/5519987716784"
-class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full text-white text-xl shadow-lg">
+class="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition">
 💬
 </a>
 
@@ -176,7 +178,7 @@ const elements = document.querySelectorAll('.reveal');
 window.addEventListener('scroll', () => {
 elements.forEach(el => {
 const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
+if(top < window.innerHeight - 80){
 el.classList.add('active');
 }
 });
@@ -184,4 +186,4 @@ el.classList.add('active');
 </script>
 
 </body>
-</html>
+    </html>
