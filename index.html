@@ -9,183 +9,231 @@
 
 <style>
 body {
-    background: #0a0a0a;
-    color: white;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
+    background:#0a0a0a;
+    color:white;
+    font-family:Arial;
+    scroll-behavior:smooth;
 }
 
-/* HERO PARALLAX */
+/* LOADING */
+#loader {
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+
+.loader-bar {
+    width:0%;
+    height:4px;
+    background:#22c55e;
+    animation:load 2s forwards;
+}
+
+@keyframes load {
+    to { width:100%; }
+}
+
+/* HERO */
 .hero {
-    height: 100vh;
-    background: url('https://i.postimg.cc/bJKY2f5g/unnamed-1.jpg') center/cover fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
+    height:100vh;
+    background:url('https://i.postimg.cc/bJKY2f5g/unnamed-1.jpg') center/cover fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
 }
 
 .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.8));
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.7);
 }
 
-/* Conteúdo */
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* BOTÃO PREMIUM */
+/* BOTÃO */
 .btn {
-    background: linear-gradient(45deg,#22c55e,#16a34a);
-    padding: 16px 32px;
-    border-radius: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(34,197,94,0.4);
+    background:#22c55e;
+    padding:16px 30px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:0.3s;
 }
-
 .btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 30px rgba(34,197,94,0.8);
+    transform:scale(1.1);
 }
 
 /* ANIMAÇÃO */
 .fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
 }
 
 .fade.show {
-    opacity: 1;
-    transform: translateY(0);
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* CARDS */
+/* CARD */
 .card {
-    background: #18181b;
-    padding: 24px;
-    border-radius: 16px;
-    transition: 0.3s;
-    border: 1px solid #27272a;
+    background:#18181b;
+    padding:20px;
+    border-radius:14px;
+    border:1px solid #27272a;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #dc2626;
-}
-
-/* FLOAT BUTTON */
+/* FLOAT */
 .float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #22c55e;
-    padding: 18px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(34,197,94,0.6);
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#22c55e;
+    padding:18px;
+    border-radius:50%;
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOADING -->
+<div id="loader">
+    <div class="loader-bar"></div>
+</div>
+
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <img src="https://i.postimg.cc/cHV18GzT/unnamed-3.jpg" class="w-32 mx-auto mb-6">
+<div class="relative z-10">
+    <img src="https://i.postimg.cc/cHV18GzT/unnamed-3.jpg" class="w-28 mx-auto mb-6">
 
-        <h1 class="text-5xl md:text-7xl font-black">
-            SEU CARRO <br>
-            <span class="text-red-600">EM BOAS MÃOS</span>
-        </h1>
+    <h1 class="text-5xl font-black">
+        SEU CARRO <br><span class="text-red-600">EM BOAS MÃOS</span>
+    </h1>
 
-        <p class="text-gray-300 mt-4 mb-8 text-lg">
-            Mecânica profissional em Engenheiro Coelho. Atendimento rápido e sem enrolação.
-        </p>
+    <p class="mt-4 mb-6 text-gray-300">
+        Mecânica profissional em Engenheiro Coelho
+    </p>
 
-        <a href="https://wa.me/5519987716784" class="btn">
-            CHAMAR NO WHATSAPP
-        </a>
-    </div>
+    <a href="https://wa.me/5519987716784" class="btn">
+        CHAMAR NO WHATSAPP
+    </a>
+</div>
+</section>
+
+<!-- CONTADOR -->
+<section class="p-12 text-center fade">
+<h2 class="text-4xl mb-6">Mais de</h2>
+<div id="counter" class="text-6xl font-black text-green-500">0</div>
+<p class="mt-2">clientes atendidos</p>
 </section>
 
 <!-- SERVIÇOS -->
-<section class="p-12 text-center fade">
-    <h2 class="text-4xl font-bold mb-10">Nossos Serviços</h2>
+<section class="p-12 text-center">
+<h2 class="text-4xl mb-10 fade">Serviços</h2>
 
-    <div class="grid md:grid-cols-4 gap-6">
-        <div class="card">Troca de óleo</div>
-        <div class="card">Freios</div>
-        <div class="card">Suspensão</div>
-        <div class="card">Motor</div>
-    </div>
+<div class="grid md:grid-cols-4 gap-6">
+<div class="card fade" style="transition-delay:0.1s">Troca de óleo</div>
+<div class="card fade" style="transition-delay:0.2s">Freios</div>
+<div class="card fade" style="transition-delay:0.3s">Suspensão</div>
+<div class="card fade" style="transition-delay:0.4s">Motor</div>
+</div>
 </section>
 
-<!-- DIFERENCIAIS -->
+<!-- DEPOIMENTOS -->
 <section class="p-12 text-center fade">
-    <h2 class="text-4xl font-bold mb-10">Por que escolher a gente?</h2>
+<h2 class="text-4xl mb-10">Avaliações</h2>
 
-    <div class="grid md:grid-cols-3 gap-6">
-        <div class="card">Atendimento rápido</div>
-        <div class="card">Preço justo</div>
-        <div class="card">Serviço de qualidade</div>
-    </div>
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="card">
+★★★★★<br>
+"Atendimento rápido e honesto!"
+</div>
+
+<div class="card">
+★★★★★<br>
+"Melhor mecânica da região."
+</div>
+
+<div class="card">
+★★★★★<br>
+"Preço justo e serviço top!"
+</div>
+
+</div>
 </section>
 
 <!-- GALERIA -->
 <section class="p-12 text-center fade">
-    <h2 class="text-4xl font-bold mb-10">Nossa Oficina</h2>
+<h2 class="text-4xl mb-10">Nossa Oficina</h2>
 
-    <div class="grid md:grid-cols-2 gap-6">
-        <img src="https://i.postimg.cc/XJD46630/unnamed.jpg" class="rounded-xl">
-        <img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg" class="rounded-xl">
-    </div>
+<div class="grid md:grid-cols-2 gap-6">
+<img src="https://i.postimg.cc/XJD46630/unnamed.jpg" class="rounded">
+<img src="https://i.postimg.cc/XJTNy6PQ/unnamed-2.jpg" class="rounded">
+</div>
 </section>
 
 <!-- CONTATO -->
 <section class="p-12 text-center fade">
-    <h2 class="text-4xl font-bold mb-6">Contato</h2>
+<h2 class="text-4xl mb-6">Contato</h2>
 
-    <p>Rua Benedito da Cunha Guedes, 785</p>
-    <p class="mb-4">Engenheiro Coelho - SP</p>
+<p>Rua Benedito da Cunha Guedes, 785</p>
 
-    <a href="tel:19987716784" class="text-xl text-green-400 font-bold">
-        (19) 98771-6784
-    </a>
-
-    <div class="mt-6 h-96 rounded overflow-hidden">
-        <iframe 
-            src="https://www.google.com/maps?q=Rua+Benedito+da+Cunha+Guedes,+785,+Engenheiro+Coelho&output=embed"
-            width="100%" height="100%" style="border:0;">
-        </iframe>
-    </div>
-</section>
-
-<!-- BOTÃO FLUTUANTE -->
-<a href="https://wa.me/5519987716784" class="float">
-    💬
+<a href="tel:19987716784" class="text-green-400 font-bold block mt-3">
+(19) 98771-6784
 </a>
 
-<script>
-// animação profissional
-const items = document.querySelectorAll('.fade');
+<div class="mt-6 h-80">
+<iframe src="https://www.google.com/maps?q=Rua+Benedito+da+Cunha+Guedes,+785,+Engenheiro+Coelho&output=embed"
+width="100%" height="100%" style="border:0;"></iframe>
+</div>
+</section>
 
-const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
+<!-- FLOAT -->
+<a href="https://wa.me/5519987716784" class="float">💬</a>
+
+<script>
+
+// LOADING
+window.onload = () => {
+    setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+    }, 2000);
+};
+
+// SCROLL ANIMATION
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
 });
 
-items.forEach(el => obs.observe(el));
+elements.forEach(el => observer.observe(el));
+
+// CONTADOR
+let count = 0;
+const target = 350;
+const counter = document.getElementById('counter');
+
+const interval = setInterval(() => {
+count += 5;
+counter.innerText = count + "+";
+
+if(count >= target){
+clearInterval(interval);
+}
+}, 30);
+
 </script>
 
 </body>
-</html>
+    </html>
