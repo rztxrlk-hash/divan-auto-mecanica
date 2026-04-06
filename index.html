@@ -1,206 +1,287 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Divan Auto Mecânica | Mecânico em Engenheiro Coelho</title>
+<title>Divan Auto Mecânica | Engenheiro Coelho</title>
 
-<meta name="description" content="Mecânica em Engenheiro Coelho. Atendimento rápido, honesto e profissional. Chame no WhatsApp agora.">
-<meta name="keywords" content="mecânico Engenheiro Coelho, oficina automotiva, troca de óleo, freios">
-
-<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-body {
-    background:#0a0a0a;
-    color:white;
-    font-family:Arial;
-    overflow-x:hidden;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* LOADING */
-#loader {
-    position:fixed;
-    inset:0;
-    background:#000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    z-index:9999;
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
 }
 
-.loader-bar {
-    width:0%;
-    height:4px;
-    background:#22c55e;
-    animation:load 2s ease forwards;
+/* LOADING INSANO */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+flex-direction:column;
 }
 
-@keyframes load {
-    to { width:100%; }
+.loader-text{
+font-size:22px;
+letter-spacing:3px;
+color:#fff;
+animation:pulse 1s infinite;
 }
 
-/* ENTRADA DO SITE */
-#site {
-    opacity:0;
-    transform:scale(0.98);
-    transition:1s ease;
-}
-#site.show {
-    opacity:1;
-    transform:scale(1);
+@keyframes pulse{
+0%,100%{opacity:0.3}
+50%{opacity:1}
 }
 
 /* HERO */
-.hero {
-    height:100vh;
-    background:url('https://i.postimg.cc/bJKY2f5g/unnamed-1.jpg') center/cover fixed;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-}
-.hero::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.75);
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1613214149922-f1809c99d4c8');
+background-size:cover;
+background-position:center;
 }
 
-/* BOTÃO */
-.btn {
-    background:#22c55e;
-    padding:16px 28px;
-    border-radius:12px;
-    font-weight:bold;
-    transition:0.3s;
+.hero h1{
+font-size:34px;
+font-weight:800;
 }
-.btn:hover {
-    transform:scale(1.1);
+
+.hero span{
+color:#ff1a1a;
+}
+
+/* BOTÃO FODA */
+.btn{
+margin-top:25px;
+padding:18px 40px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#00ff88,#00cc66);
+color:#000;
+font-weight:700;
+font-size:16px;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+transition:0.3s;
+box-shadow:0 0 20px rgba(0,255,136,0.4);
+}
+
+.btn::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+transform:rotate(25deg);
+top:-50%;
+left:-50%;
+animation:shine 3s infinite;
+}
+
+@keyframes shine{
+0%{left:-100%}
+100%{left:100%}
+}
+
+.btn:hover{
+transform:scale(1.07);
+box-shadow:0 0 40px rgba(0,255,136,0.8);
+}
+
+/* SECTIONS */
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+/* SERVIÇOS */
+.card{
+background:#111;
+padding:25px;
+margin:15px;
+border-radius:15px;
+transition:0.3s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+background:#1a1a1a;
 }
 
 /* ANIMAÇÃO SCROLL */
-.fade {
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.8s ease;
-}
-.fade.show {
-    opacity:1;
-    transform:translateY(0);
+.show{
+opacity:1 !important;
+transform:translateY(0) !important;
+transition:0.6s ease;
 }
 
-/* FLOAT */
-.float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#22c55e;
-    padding:18px;
-    border-radius:50%;
+/* CONTADOR */
+.counter{
+font-size:40px;
+color:#00ff88;
+font-weight:800;
+}
+
+/* DEPOIMENTOS */
+.review{
+margin:20px auto;
+max-width:300px;
+background:#111;
+padding:20px;
+border-radius:10px;
+font-style:italic;
+}
+
+/* WHATS FLOAT */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:#000;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+box-shadow:0 0 20px rgba(37,211,102,0.6);
+cursor:pointer;
+transition:0.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOADING -->
 <div id="loader">
-    <h1 class="mb-4 text-xl">Carregando...</h1>
-    <div class="loader-bar"></div>
+<div class="loader-text">CARREGANDO...</div>
 </div>
-
-<!-- SITE -->
-<div id="site">
 
 <!-- HERO -->
-<section class="hero">
-<div class="relative z-10">
-    <img src="https://i.postimg.cc/cHV18GzT/unnamed-3.jpg" class="w-28 mx-auto mb-6">
+<div class="hero">
+<h1>MECÂNICO EM <span>ENGENHEIRO COELHO</span></h1>
+<p>Rápido, honesto e sem enrolação.</p>
 
-    <h1 class="text-5xl font-black">
-        MECÂNICO EM <br><span class="text-red-600">ENGENHEIRO COELHO</span>
-    </h1>
-
-    <p class="mt-4 mb-6 text-gray-300">
-        Atendimento rápido, honesto e sem enrolação.
-    </p>
-
-    <a href="https://wa.me/5519987716784?text=Olá,%20preciso%20de%20um%20orçamento"
-    class="btn">
-        CHAMAR NO WHATSAPP
-    </a>
+<a href="https://wa.me/5519987716784?text=Olá,%20quero%20um%20orçamento">
+<button class="btn">CHAMAR NO WHATSAPP</button>
+</a>
 </div>
-</section>
 
-<!-- PROVA SOCIAL -->
-<section class="p-12 text-center fade">
-<h2 class="text-4xl mb-6">★★★★★ 5.0 no Google</h2>
-<p>"Atendimento rápido e preço justo"</p>
+<!-- NÚMEROS -->
+<section>
+<h2>Resultados</h2>
+<div class="counter" data-target="350">0</div>
+<p>Clientes atendidos</p>
 </section>
 
 <!-- SERVIÇOS -->
-<section class="p-12 text-center fade">
-<h2 class="text-4xl mb-10">Serviços</h2>
+<section>
+<h2>Serviços</h2>
 
-<div class="grid md:grid-cols-4 gap-6">
-<div class="bg-zinc-800 p-6 rounded">Troca de óleo</div>
-<div class="bg-zinc-800 p-6 rounded">Freios</div>
-<div class="bg-zinc-800 p-6 rounded">Suspensão</div>
-<div class="bg-zinc-800 p-6 rounded">Motor</div>
-</div>
+<div class="card">Troca de óleo</div>
+<div class="card">Freios</div>
+<div class="card">Suspensão</div>
+<div class="card">Motor</div>
+
+</section>
+
+<!-- DEPOIMENTOS -->
+<section>
+<h2>⭐⭐⭐⭐⭐ 5.0 no Google</h2>
+
+<div class="review">"Atendimento rápido e preço justo"</div>
+<div class="review">"Mecânico honesto, recomendo demais"</div>
+<div class="review">"Serviço top, voltou a rodar perfeito"</div>
+
 </section>
 
 <!-- CONTATO -->
-<section class="p-12 text-center fade">
-<h2 class="text-4xl mb-6">Contato</h2>
-
+<section>
+<h2>Contato</h2>
 <p>Rua Benedito da Cunha Guedes, 785</p>
-
-<a href="tel:19987716784" class="text-green-400 font-bold block mt-3">
-(19) 98771-6784
-</a>
-
-<div class="mt-6 h-80">
-<iframe src="https://www.google.com/maps?q=Rua+Benedito+da+Cunha+Guedes,+785,+Engenheiro+Coelho&output=embed"
-width="100%" height="100%" style="border:0;"></iframe>
-</div>
+<p>(19) 98771-6784</p>
 </section>
 
+<div class="whatsapp" onclick="window.open('https://wa.me/5519987716784','_blank')">
+💬
 </div>
-
-<!-- BOTÃO -->
-<a href="https://wa.me/5519987716784?text=Olá,%20preciso%20de%20um%20orçamento"
-class="float">💬</a>
 
 <script>
 
-// LOADING + ENTRADA
+/* LOADING */
 window.onload = () => {
-    setTimeout(() => {
-        document.getElementById('loader').style.opacity = '0';
-        setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
-            document.getElementById('site').classList.add('show');
-        }, 500);
-    }, 2000);
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1500);
 };
 
-// SCROLL
-const els = document.querySelectorAll('.fade');
+/* SCROLL ANIMAÇÃO */
+const elements = document.querySelectorAll(".card");
 
-const obs = new IntersectionObserver(entries => {
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add('show');
+window.addEventListener("scroll",()=>{
+elements.forEach((el,i)=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 50){
+setTimeout(()=>{
+el.classList.add("show");
+}, i*150);
 }
 });
 });
 
-els.forEach(el => obs.observe(el));
+/* CONTADOR */
+const counter = document.querySelector(".counter");
+let started = false;
+
+window.addEventListener("scroll",()=>{
+if(!started){
+let pos = counter.getBoundingClientRect().top;
+if(pos < window.innerHeight){
+started = true;
+let count = 0;
+let target = +counter.dataset.target;
+
+let interval = setInterval(()=>{
+count+=5;
+counter.innerText = "+"+count;
+
+if(count >= target){
+counter.innerText = "+"+target;
+clearInterval(interval);
+}
+},20);
+}
+}
+});
 
 </script>
 
